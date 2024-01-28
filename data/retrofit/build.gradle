@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace 'com.example.retrofit'
+    namespace 'com.example.data'
     compileSdk 33
 
     defaultConfig {
-        minSdk 24
-        targetSdk 33
+        minSdk minAndroidSdk
+        targetSdk targetAndroidSdk
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -30,12 +30,25 @@ android {
     }
 }
 
-dependencies {
+apply plugin: 'kotlin-kapt'
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.9.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+dependencies {
+    androidTestImplementation AndroidTestImplementations.Test.Junit
+
+    //Coroutines
+    implementation Implementations.Coroutines
+    testImplementation TestImplementation.CoroutinesTest
+
+    //Retrofit
+    implementation Implementations.Retrofit.Retrofit
+    implementation Implementations.Retrofit.RetrofitMock
+    implementation Implementations.Retrofit.ConverterGson
+
+    //Pager3
+    implementation Implementations.Pager.PagingRuntime
+    implementation Implementations.Pager.PagingCompose
+
+    //Dagger2
+    implementation Implementations.Dagger2
+    kapt Kapt.Dagger2
 }

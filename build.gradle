@@ -9,7 +9,7 @@ buildscript {
         pager_version = '3.2.0'
         koin_version = '3.4.1'
         navigation_version = '2.5.2'
-        dagger_version = '2.40'
+        dagger_version = '2.43'
 
         Implementations = [
                 Navigation: [
@@ -62,7 +62,7 @@ buildscript {
         ]
         Kapt = [
                 Room: "androidx.room:room-compiler:$room_version",
-                Dagger: "com.google.dagger:dagger-compiler:$dagger_version"
+                Dagger2: "com.google.dagger:dagger-compiler:$dagger_version"
         ]
 
         Modules = [

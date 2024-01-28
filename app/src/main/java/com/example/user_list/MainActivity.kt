@@ -1,4 +1,4 @@
-package com.example.randomuser_app
+package com.example.user_list
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,14 +10,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.randomuser_app.ui.theme.RandomUser_AppTheme
+import com.example.user_list.theme.RandomUser_AppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
             RandomUser_AppTheme {
-                // A surface container using the 'background' color from the theme
+                // A surface container using the 'background' color from the com.example.user_list.theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
