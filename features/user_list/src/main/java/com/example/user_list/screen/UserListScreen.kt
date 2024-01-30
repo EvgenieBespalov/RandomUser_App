@@ -62,19 +62,34 @@ fun UserBox(
 ){
     Box(
         modifier = Modifier
-            .fillMaxSize()
+            //.fillMaxSize()
             .padding(10.dp)
     ){
-        AsyncImage(
-            modifier = Modifier
-                .fillMaxSize()
-                .clickable {
-                    //navController.navigate(SearchImageModuleRoutes.ImageScreenRoute.route + "/${image.id}")
-                },
-            model = users.picture.thumbnail,
-            contentScale = ContentScale.Crop,
-            contentDescription = "Icon user"
-        )
+        Row(
+            //modifier = Modifier.fillMaxSize()
+        ) {
+            AsyncImage(
+                modifier = Modifier
+                    .size(100.dp)
+                    .clickable {
+                        //navController.navigate(SearchImageModuleRoutes.ImageScreenRoute.route + "/${image.id}")
+                    },
+                model = users.picture.thumbnail,
+                contentScale = ContentScale.Crop,
+                contentDescription = "Icon user"
+            )
+            Column(
+                modifier = Modifier.padding(start = 10.dp)
+            ) {
+                Text(text = users.name.title + ". " + users.name.first + " " + users.name.last)
+                Text(text = users.location.country
+                        + ", " + users.location.state
+                        + ", " + users.location.city
+                        + ", " + users.location.street.name
+                        + ", " + users.location.street.number)
+                Text(text = users.phone)
+            }
+        }
     }
 }
 
