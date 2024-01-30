@@ -4,6 +4,6 @@ import com.google.gson.annotations.SerializedName
 
 data class ApiResponse(
     @field:SerializedName("results")
-    val listUsers: ArrayList<User> = arrayListOf(),
+    val listUsers: ArrayList<UserModel> = arrayListOf(),
     val info: Info
 )

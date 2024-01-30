@@ -2,18 +2,18 @@ package ru.cft.shift2023winter.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class User(
+data class UserModel(
     val gender: String,
-    val name: Name,
-    val location: Location,
+    val name: NameModel,
+    val location: LocationModel,
     val email: String,
-    val login: Login,
+    val login: LoginModel,
     @field:SerializedName("dob")
-    val dateOfBirth: DateOfBirth,
-    val registered: Registered,
+    val dateOfBirth: DateOfBirthModel,
+    val registered: RegisteredModel,
     val phone: String,
     val cell: String,
-    val id: Id,
-    val picture: Picture,
+    val id: IdModel,
+    val picture: PictureModel,
     val nat: String
 )

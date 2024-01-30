@@ -6,16 +6,15 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import data_source.UserApi
 import retrofit2.HttpException
-import ru.cft.shift2023winter.data.model.ApiResponse
-import ru.cft.shift2023winter.data.model.User
+import ru.cft.shift2023winter.data.model.UserModel
 
 class UserPagingSource(
     private val userApi: UserApi,
     private val seed: String?,
     private val selectedGender: String?,
-): PagingSource<Int, User>() {
+): PagingSource<Int, UserModel>() {
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, User> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, UserModel> {
         /*if (categoryId.isBlank()) {
             return LoadResult.Page(emptyList(), prevKey = null, nextKey = null)
         }*/
@@ -47,7 +46,7 @@ class UserPagingSource(
         }
     }
 
-    override fun getRefreshKey(state: PagingState<Int, User>): Int? {
+    override fun getRefreshKey(state: PagingState<Int, UserModel>): Int? {
         val anchorPosition = state.anchorPosition ?: return null
         val anchorPage = state.closestPageToPosition(anchorPosition) ?: return null
         return anchorPage.prevKey?.plus(1) ?: anchorPage.nextKey?.minus(1)

@@ -6,7 +6,7 @@ import androidx.paging.PagingData
 import data_source.UserApi
 import kotlinx.coroutines.flow.Flow
 import paging_source.UserPagingSource
-import ru.cft.shift2023winter.data.model.User
+import ru.cft.shift2023winter.data.model.UserModel
 
 class ApiRepositoryImpl(
     private val userApi: UserApi
@@ -14,7 +14,7 @@ class ApiRepositoryImpl(
     override suspend fun getListUser(
         seed: String?,
         selectedGender: String?
-    ): Flow<PagingData<User>> =
+    ): Flow<PagingData<UserModel>> =
         Pager(PagingConfig(10)){
             UserPagingSource(
                 userApi = userApi,

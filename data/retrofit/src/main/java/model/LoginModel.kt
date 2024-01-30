@@ -1,6 +1,6 @@
 package ru.cft.shift2023winter.data.model
 
-data class Login(
+data class LoginModel(
     val uuid: String,
     val username: String,
     val password: String,

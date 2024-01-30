@@ -1,6 +1,6 @@
 package ru.cft.shift2023winter.data.model
 
-data class Id(
+data class IdModel(
     val name: String,
     val value: String?
 )

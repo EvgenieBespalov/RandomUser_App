@@ -1,11 +1,11 @@
 package ru.cft.shift2023winter.data.model
 
-data class Location(
-    val street: Street,
+data class LocationModel(
+    val street: StreetModel,
     val city: String,
     val state: String,
     val country: String,
     val postcode: String,
-    val coordinates: Coordinates,
-    val timezone: Timezone
+    val coordinates: CoordinatesModel,
+    val timezone: TimezoneModel
 )

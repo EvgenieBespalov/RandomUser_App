@@ -1,6 +1,6 @@
 package ru.cft.shift2023winter.data.model
 
-data class Picture(
+data class PictureModel(
     val large: String,
     val medium: String,
     val thumbnail: String

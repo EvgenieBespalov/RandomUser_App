@@ -4,7 +4,7 @@ import androidx.paging.PagingData
 import com.example.user_list.domain.entities.User
 import kotlinx.coroutines.flow.Flow
 
-interface UserRepository {
+interface UserListRepository {
     suspend fun getListUser(
         seed: String?,
         selectedGender: String?

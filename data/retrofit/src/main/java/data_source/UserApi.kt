@@ -6,7 +6,7 @@ import retrofit2.http.Query
 import ru.cft.shift2023winter.data.model.ApiResponse
 
 interface UserApi {
-    @GET("/")
+    @GET("?")
     suspend fun getListUser(
         //@Query("results") numberOfUsers: String,
         @Query("page") page: String,

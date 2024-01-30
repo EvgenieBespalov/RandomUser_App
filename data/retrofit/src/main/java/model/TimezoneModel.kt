@@ -1,6 +1,6 @@
 package ru.cft.shift2023winter.data.model
 
-data class Timezone(
+data class TimezoneModel(
     val offset: String,
     val description: String
 )
