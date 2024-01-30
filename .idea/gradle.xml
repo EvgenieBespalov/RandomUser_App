@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/data/retrofit" />
             <option value="$PROJECT_DIR$/data/room" />
             <option value="$PROJECT_DIR$/features" />
+            <option value="$PROJECT_DIR$/features/user_info" />
             <option value="$PROJECT_DIR$/features/user_list" />
           </set>
         </option>
