@@ -48,6 +48,7 @@ android {
 
 dependencies {
     implementation project(path: Modules.Features.UserList)
+    implementation project(path: Modules.Features.UserInfo)
     implementation project(path: Modules.Data.Retrofit)
 
 

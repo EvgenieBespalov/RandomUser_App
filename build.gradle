@@ -71,6 +71,7 @@ buildscript {
         Modules = [
                 Features: [
                         UserList: ':features:user_list',
+                        UserInfo: ':features:user_info',
                 ],
                 Data: [
                         Retrofit: ':data:retrofit',

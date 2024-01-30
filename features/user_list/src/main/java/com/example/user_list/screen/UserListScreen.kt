@@ -23,6 +23,7 @@ import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun UserListScreen(
+    navController: NavHostController,
     viewModel: UserListScreenViewModel = koinViewModel()
 ) {
     val state by viewModel.state.observeAsState(UserListUiState.Initial)
@@ -32,6 +33,7 @@ fun UserListScreen(
         UserListUiState.Loading    -> LoadScreen()
         is UserListUiState.Content -> {
             UserListColumn(
+                navController = navController,
                 users = (state as UserListUiState.Content).userList.collectAsLazyPagingItems()
             )
         }
@@ -41,6 +43,7 @@ fun UserListScreen(
 
 @Composable
 fun UserListColumn(
+    navController: NavHostController,
     users: LazyPagingItems<User>
 ){
     LazyColumn(){
@@ -49,6 +52,7 @@ fun UserListColumn(
         ){
             users[it]?.let { index ->
                 UserBox(
+                    navController = navController,
                     users = index
                 )
             }
@@ -58,6 +62,7 @@ fun UserListColumn(
 
 @Composable
 fun UserBox(
+    navController: NavHostController,
     users: User
 ){
     Box(
@@ -72,7 +77,7 @@ fun UserBox(
                 modifier = Modifier
                     .size(100.dp)
                     .clickable {
-                        //navController.navigate(SearchImageModuleRoutes.ImageScreenRoute.route + "/${image.id}")
+                        navController.navigate("UserInfoModuleRoute")
                     },
                 model = users.picture.thumbnail,
                 contentScale = ContentScale.Crop,
