@@ -46,10 +46,8 @@ android {
     }
 }
 
-apply plugin: 'kotlin-kapt'
-
 dependencies {
-    //implementation project(path: Modules.Features.ImageCategory)
+    implementation project(path: Modules.Features.UserList)
     implementation project(path: Modules.Data.Retrofit)
 
 
@@ -71,9 +69,10 @@ dependencies {
 
     testImplementation TestImplementation.Junit
 
-    //Dagger2
-    implementation Implementations.Dagger2
-    kapt Kapt.Dagger2
+    //Koin
+    implementation Implementations.Koin.KoinCore
+    implementation Implementations.Koin.KoinAndroid
+    implementation Implementations.Koin.KoinAndroidxCompose
     //Pager3
     implementation Implementations.Pager.PagingRuntime
     implementation Implementations.Pager.PagingCompose

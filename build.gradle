@@ -39,7 +39,11 @@ buildscript {
                         PagingRuntime: "androidx.paging:paging-runtime:$pager_version",
                         PagingCompose: "androidx.paging:paging-compose:$pager_version"
                 ],
-                Dagger2: "com.google.dagger:dagger:$dagger_version",
+                Koin: [
+                        KoinCore: "io.insert-koin:koin-core:$koin_version",
+                        KoinAndroid: "io.insert-koin:koin-android:$koin_version",
+                        KoinAndroidxCompose: "io.insert-koin:koin-androidx-compose:$koin_version"
+                ],
         ]
         AndroidTestImplementations = [
                 Compose: [
@@ -62,7 +66,6 @@ buildscript {
         ]
         Kapt = [
                 Room: "androidx.room:room-compiler:$room_version",
-                Dagger2: "com.google.dagger:dagger-compiler:$dagger_version"
         ]
 
         Modules = [

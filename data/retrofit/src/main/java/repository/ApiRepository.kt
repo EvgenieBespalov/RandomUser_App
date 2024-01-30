@@ -8,8 +8,6 @@ import ru.cft.shift2023winter.data.model.User
 
 interface ApiRepository {
     suspend fun getListUser(
-        //numberOfUsers: String,
-        page: String,
         seed: String?,
         selectedGender: String?
     ) : Flow<PagingData<User>>

@@ -1,22 +1,20 @@
 package com.example.user_list
 
 import android.app.Application
-import di.DaggerRetrofitComponent
-import di.RetrofitComponent
+import com.example.user_list.domain.di.UserListComponent
+import di.provideRetrofitModule
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
 
-class MyApplication : Application() {
-
-    lateinit var retrofitComponent: RetrofitComponent
-
+class MyApplication: Application() {
     override fun onCreate() {
         super.onCreate()
-        injectDependencies()
-    }
 
-    private fun injectDependencies() {
-        retrofitComponent = DaggerRetrofitComponent
-            .builder()
-            .build()
+        startKoin {
+            androidContext(this@MyApplication)
+            modules(
+                provideRetrofitModule(),
+            )
+        }
     }
-
 }

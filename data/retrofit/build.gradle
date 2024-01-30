@@ -30,8 +30,6 @@ android {
     }
 }
 
-apply plugin: 'kotlin-kapt'
-
 dependencies {
     androidTestImplementation AndroidTestImplementations.Test.Junit
 
@@ -48,7 +46,8 @@ dependencies {
     implementation Implementations.Pager.PagingRuntime
     implementation Implementations.Pager.PagingCompose
 
-    //Dagger2
-    implementation Implementations.Dagger2
-    kapt Kapt.Dagger2
+    //Koin
+    implementation Implementations.Koin.KoinCore
+    implementation Implementations.Koin.KoinAndroid
+    implementation Implementations.Koin.KoinAndroidxCompose
 }
